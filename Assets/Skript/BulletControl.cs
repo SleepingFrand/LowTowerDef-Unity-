@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BulletControl : MonoBehaviour
 {
+
+/*Характеристики пули*/
     public GameObject Target;
     public float Speed;
     public int Damage;

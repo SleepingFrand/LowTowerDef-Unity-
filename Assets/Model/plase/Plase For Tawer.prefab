@@ -112,3 +112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tower: {fileID: 0}
+  PutPlase: 0
+  BaseMaterial: {fileID: 2100000, guid: a7e36d7ecb35de4489eed8fdc647fc05, type: 2}
+  PutMaterial: {fileID: 2100000, guid: 7268ed2e851497a45a65071fe4a2e0f4, type: 2}

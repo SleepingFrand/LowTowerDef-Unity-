@@ -4,30 +4,32 @@ using UnityEngine;
 
 public class TowerContril : MonoBehaviour
 {
-    public int Damage = 1;
+
+/*Пуля*/
     public GameObject Bullet;
     public float SpeedBullet = 1;
+
+/*Характеристики башни*/
+    public int Damage = 1;
     public float reload = 0.5f;
     float reload_now = 0;
+    public int range = 10;
 
+/*Характеристики улучшения башни*/
     public int DamagePerLvl = 1;
     public int PrisePerLvl = 10;
     public int Lvl = 1;
 
-    public int range = 10;
+/*Функциональные переменные*/
+    GameObject[] enemy;         // Пул врагов на карте
+    GameObject target;          // Цель башни
+    GameObject gun;             // Орудие башни (дочернее)
 
-    GameObject[] enemy;
-    public GameObject target;
-
-
-
-    GameObject gun;
-
-    void UpdateTarget() {
+    void UpdateTarget() {       // Поиск цели
         enemy = GameObject.FindGameObjectsWithTag("Enemy");
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
-        foreach (GameObject enemy in enemy) { 
+        foreach (GameObject enemy in enemy) {   // Ищем ближайщего врага
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
             if (distanceToEnemy < shortestDistance) { 
                 shortestDistance = distanceToEnemy; nearestEnemy = enemy; 
@@ -41,7 +43,7 @@ public class TowerContril : MonoBehaviour
         } 
     }
     
-    void Fire()
+    void Fire()                 // Стрельба
     {
         if (reload_now >= 0)
             reload_now -= Time.deltaTime;

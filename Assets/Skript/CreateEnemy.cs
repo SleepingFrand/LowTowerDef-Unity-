@@ -5,15 +5,20 @@ using UnityEngine;
 
 public class CreateEnemy : MonoBehaviour
 {
-    public int count = 0;
+
+/*Характеристики врагов*/
+    public GameObject EnemyPrefab;
     public float speed = 1;
     public float speedRotate = 1;
-    public GameObject[] roadPoint; 
-    public float TimeSpawn = 1;
-    public GameObject EnemyPrefab;
-    float timespawn = 5;
 
-    int count_now = 0;
+/*Характеристики врат*/
+    public GameObject[] roadPoint;          // Точки пути
+    public int count = 0;                   // Кол-во врагов
+    public float TimeSpawn = 1;             // Время появления
+
+/*Характеристики врат*/
+    float timespawn = 5;                    // Задержка первого появления
+    int count_now = 0;                      // Подсчет появивщихся врагов
 
     // Start is called before the first frame update
     void Start()
